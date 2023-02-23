@@ -1,0 +1,9 @@
+registracija +
+prisijungimas +
+uzduoti klausima +
+visi klausimai +
+istrinti klausima +
+atsakyti i klausima +
+istrinti atsakyma +
+like/dislike +
+filtruoti atsakytus/neatsakytus

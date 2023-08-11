@@ -2,10 +2,10 @@
 
 This BackEnd app provides specific EndPoints for running Forum site on backend server. It connects to MongoDb database. It has authentication and security middleware via login and register.
 
-This app allows users to register or login. Also registered users has access to questions and answers. users can ask questions and answer to other questions.  
+This app allows users to register or login. Also registered users has access to questions and answers.  
 Also answers have ratings. Users can rate them (like - dislike). User can delete his/her own questions and answers.
 
-This app also have **FrontEnd**, which is created also by me with Next.js. **Link:** https://github.com/SimLukos/Forum-FrontEnd-Exam
+This app also have **FrontEnd**, which is created with Next.js. **Link:** https://github.com/SimLukos/Forum-FrontEnd-Exam
 
 ## Running the app:
 

@@ -1,6 +1,6 @@
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const UserSchema = require("../models/userModel");
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const UserSchema = require('../models/userModel');
 
 // function to capitalize first letter for name
 function capitalize(str) {
@@ -21,7 +21,7 @@ module.exports.REGISTER = async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
-  if (email.includes("@") && password.length >= 6 && containNumbers(password)) {
+  if (email.includes('@') && password.length >= 6 && containNumbers(password)) {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = new UserSchema({
@@ -37,19 +37,19 @@ module.exports.REGISTER = async (req, res) => {
       const token = jwt.sign(
         { name: user.name, email: user.email, userId: user._id },
         process.env.JWT_SECRET,
-        { expiresIn: "24h" },
-        { algorythm: "RS256" }
+        { expiresIn: '24h' },
+        { algorythm: 'RS256' }
       );
 
       return res.status(200).json({
-        Message: "User registration was successfull.",
+        Message: 'User registration was successfull.',
         jwt_token: token,
       });
     });
   } else {
     return res.status(400).json({
       Message:
-        "Validation was unsuccessful. Email must contain @ and password must be at least 6 characters long with number(s). Please try again!",
+        'Validation was unsuccessful. Email must contain @ and password must be at least 6 characters long with number(s). Please try again!',
     });
   }
 };
@@ -68,23 +68,23 @@ module.exports.LOGIN = async (req, res) => {
         const token = jwt.sign(
           { name: user.name, email: user.email, userId: user._id },
           process.env.JWT_SECRET,
-          { expiresIn: "24h" },
-          { algorythm: "RS256" }
+          { expiresIn: '24h' },
+          { algorythm: 'RS256' }
         );
 
         return res.status(200).json({
-          message: "Login was successfull.",
+          message: 'Login was successfull.',
           jwt_token: token,
           userName: user.name,
         });
       } else {
         return res.status(404).json({
-          message: "Login was unsuccessfull. Check your email and password.",
+          message: 'Login was unsuccessfull. Check your email and password.',
         });
       }
     } else {
       return res.status(404).json({
-        message: "Login was unsuccessfull. Check your email and password.",
+        message: 'Login was unsuccessfull. Check your email and password.',
       });
     }
   } catch (error) {

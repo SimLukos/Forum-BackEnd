@@ -20,14 +20,14 @@ Application runs on port 3000 by default. It can be changed at index.js file.
 
 ## App Endpoints:
 
-post - **/question** - ask question;
-get - **/questions** - getting all questions with agregated answers;
-get - **/question/:id** - getting question by id;
+post - **/question** - ask question;  
+get - **/questions** - getting all questions with agregated answers;  
+get - **/question/:id** - getting question by id;  
 delete - **/question/:id** - delete a question by its id;
 
-post - **/question/:id/answer** - posting answer for specific (id) question;
-delete - **/answer/:id** - delete answer by id;
+post - **/question/:id/answer** - posting answer for specific (id) question;  
+delete - **/answer/:id** - delete answer by id;  
 post - **/answer/:id** - updating answer with rating and like/dislike function;
 
-post - **/register** - user registration;
+post - **/register** - user registration;  
 post - **/login** - user login and creating token for authentication (middleware).
